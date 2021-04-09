@@ -1,0 +1,16 @@
+fmod BTree is
+  protecting NAT .
+
+  sort Leaf Btree .
+  subsort Leaf < Btree .
+
+  op ((_,_,_)) : Btree Nat Btree -> Btree [ctor] .
+  op nil : -> Btree [ctor] .
+ 
+
+
+  --- op Insert : Tree Nat -> Tree .
+  --- eq Insert(nil, x) = x,nil,nil .
+endfm
+
+  
