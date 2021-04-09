@@ -64,6 +64,9 @@ fmod BTree is
   eq isBSTree(nil) = true .
   eq isBSTree((lson,value,rson)) = JudgeSubtreeLess(lson,value) and JudgeSubtreeGreat(rson,value) and isBSTree(lson) and isBSTree(rson) .
   
+  op Insert : Btree Nat -> Btree .
+  eq Insert(nil, value) = (nil,value,nil) .
+  eq Insert((lson,value,rson), pivot) = (if (pivot < value) then Insert(lson,pivot) else Insert(rson,pivot) fi) .
 
   --- op Insert : Tree Nat -> Tree .
   --- eq Insert(nil, x) = x,nil,nil .
